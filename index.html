@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Joining Roblox Public Server</title>
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const placeId = params.get('placeId'); // ID del juego
+            const jobId = params.get('jobId');     // ID del servidor
+
+            if (placeId && jobId) {
+                // Redirige a Roblox usando el Job ID
+                window.location.href = `roblox://placeID?placeId=${placeId}&jobId=${jobId}`;
+            } else {
+                document.body.textContent = "Error: Missing Place ID or Job ID.";
+            }
+        };
+    </script>
+</head>
+<body></body>
+</html>
